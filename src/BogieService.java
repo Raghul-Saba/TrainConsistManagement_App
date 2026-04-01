@@ -16,7 +16,7 @@ public class BogieService {
         return bogies.stream()
                 .collect(Collectors.groupingBy(Bogie::getName));
     }
-    //UC10
+    //uc10
     public int getTotalCapacity(List<Bogie> bogies) {
         return bogies.stream()
                 .map(Bogie::getCapacity)      // extract capacity
