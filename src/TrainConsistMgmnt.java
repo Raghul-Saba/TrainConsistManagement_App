@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class TrainConsistMgemntApp {
+public class TrainConsistMgmntApp {
 
     public static void main(String[] args) {
         System.out.println("=== UC12: Safety Compliance Check ===");

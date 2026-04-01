@@ -2,13 +2,13 @@ import java.util.List;
 
 public class SafetyService {
 
-    // UC12: Safety compliance check
-    public boolean isTrainSafe(List<GoodsBogie> bogies) {
-        return bogies.stream().allMatch(b -> {
-            if ("Cylindrical".equalsIgnoreCase(b.getType())) {
-                return "Petroleum".equalsIgnoreCase(b.getCargo());
-            }
-            return true; // other bogies are flexible
-        });
+    // UC12: Safety compliance
+    public boolean isTrainSafe(List<GoodsBogie> goodsBogies) {
+        // All cylindrical bogies must carry Petroleum
+        return goodsBogies.stream()
+                .allMatch(bogie -> 
+                    !bogie.getType().equalsIgnoreCase("Cylindrical") 
+                    || bogie.getCargo().equalsIgnoreCase("Petroleum")
+                );
     }
 }

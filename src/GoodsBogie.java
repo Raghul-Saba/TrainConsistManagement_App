@@ -1,6 +1,6 @@
 public class GoodsBogie {
-    private String type;
-    private String cargo;
+    private String type;   // e.g., "Cylindrical", "Rectangular"
+    private String cargo;  
 
     public GoodsBogie(String type, String cargo) {
         this.type = type;
