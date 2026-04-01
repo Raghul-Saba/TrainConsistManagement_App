@@ -1,8 +1,8 @@
-public class Bogie {
+public class GoodsBogie {
     private String type;
     private String cargo;
 
-    public Bogie(String type, String cargo) {
+    public GoodsBogie(String type, String cargo) {
         this.type = type;
         this.cargo = cargo;
     }
