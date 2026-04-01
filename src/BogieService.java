@@ -4,23 +4,23 @@ import java.util.stream.Collectors;
 
 public class BogieService {
 
-    // UC8: Filter passenger bogies by capacity
-    public List<PassengerBogie> filterByCapacity(List<PassengerBogie> bogies, int threshold) {
+    // UC8: Filter by capacity
+    public List<Bogie> filterByCapacity(List<Bogie> bogies, int threshold) {
         return bogies.stream()
-                     .filter(b -> b.getCapacity() > threshold)
-                     .collect(Collectors.toList());
+                .filter(b -> b.getCapacity() > threshold)
+                .collect(Collectors.toList());
     }
 
-    // UC9: Group passenger bogies by type
-    public Map<String, List<PassengerBogie>> groupByType(List<PassengerBogie> bogies) {
+    // UC9: Group by type
+    public Map<String, List<Bogie>> groupByType(List<Bogie> bogies) {
         return bogies.stream()
-                     .collect(Collectors.groupingBy(PassengerBogie::getName));
+                .collect(Collectors.groupingBy(Bogie::getName));
     }
 
-    // UC10: Total seating capacity
-    public int getTotalCapacity(List<PassengerBogie> bogies) {
+    // UC10: Total capacity
+    public int getTotalCapacity(List<Bogie> bogies) {
         return bogies.stream()
-                     .map(PassengerBogie::getCapacity)
-                     .reduce(0, Integer::sum);
+                .map(Bogie::getCapacity)
+                .reduce(0, Integer::sum);
     }
 }

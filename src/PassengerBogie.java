@@ -1,22 +1,6 @@
-public class PassengerBogie {
-    private String name;
-    private int capacity;
+public class PassengerBogie extends Bogie {
 
-    public PassengerBogie(String name, int capacity) {
-        this.name = name;
-        this.capacity = capacity;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    @Override
-    public String toString() {
-        return name + " -> " + capacity;
+    public PassengerBogie(String type, int capacity) {
+        super(type, capacity);
     }
 }
