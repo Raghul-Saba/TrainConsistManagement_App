@@ -14,9 +14,7 @@ public class TrainConsistManagementApp {
 
         String key = sc.next();
 
-        sortArray(bogieIds);
-
-        boolean found = binarySearch(bogieIds, key);
+        boolean found = linearSearch(bogieIds, key);
 
         if (found) {
             System.out.println("Bogie ID found");
@@ -25,37 +23,12 @@ public class TrainConsistManagementApp {
         }
     }
 
-    public static void sortArray(String[] arr) {
-        int n = arr.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                if (arr[j].compareTo(arr[j + 1]) > 0) {
-                    String temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
-            }
-        }
-    }
-
-    public static boolean binarySearch(String[] arr, String key) {
-        int low = 0;
-        int high = arr.length - 1;
-
-        while (low <= high) {
-            int mid = (low + high) / 2;
-
-            int cmp = arr[mid].compareTo(key);
-
-            if (cmp == 0) {
+    public static boolean linearSearch(String[] arr, String key) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].equals(key)) {
                 return true;
-            } else if (cmp < 0) {
-                low = mid + 1;
-            } else {
-                high = mid - 1;
             }
         }
-
         return false;
     }
 }
